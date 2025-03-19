@@ -15,8 +15,8 @@ const messageSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-}, { timestamp: true });/// timestamp to know when it was created
+},
+    { timestamp: true });/// timestamp to know when it was created
 
 const Message = mongoose.model("Message", messageSchema);
-
 export default Message;
