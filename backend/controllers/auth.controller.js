@@ -23,7 +23,6 @@ export const signup = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         //profile pics here
-
         const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
         const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
 
@@ -50,7 +49,6 @@ export const signup = async (req, res) => {
                 fullName: newUser.fullName,
                 email: newUser.email,
                 username: newUser.username,
-                password: newUser.password,
                 profilePic: newUser.profilePic
             });
 
@@ -99,7 +97,7 @@ export const logout = (req, res) => {
         res.status(200).json({ message: "logged out successful " });
 
     } catch (error) {
-        console.log(error, message, "error loging out ");
-        res.status(500).json({ error: " Ib=nternal server error, something went wrong" });
+        console.log(error, "error loging out ");
+        res.status(500).json({ error: " Internal server error, something went wrong" });
     }
 };
