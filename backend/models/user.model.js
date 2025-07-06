@@ -7,12 +7,6 @@ const userSchema = new mongoose.Schema({
         trim: true,
         maxLength: 25
     },
-    email: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true
-    },
     username: {
         type: String,
         required: true,
@@ -41,7 +35,7 @@ const userSchema = new mongoose.Schema({
         default: "",
     },
 },
-    { timestamps: true }
+    { timestamps: true }// for createdAt and updatedAt fields
 );
 
 const User = mongoose.model("User", userSchema);
